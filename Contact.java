@@ -1,6 +1,4 @@
-/**
- * Represents a single contact record.
- */
+
 public class Contact {
 
     private String name;
@@ -37,10 +35,7 @@ public class Contact {
         this.email = email;
     }
 
-    /**
-     * Serializes this contact to a single CSV line for file storage.
-     * Format: name,phone,email
-     */
+  
     public String toCsv() {
         return name + "," + phone + "," + email;
     }
