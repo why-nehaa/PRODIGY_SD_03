@@ -1,12 +1,5 @@
 import java.util.List;
 import java.util.Scanner;
-
-/**
- * Console-based Contact Management System.
- *
- * Supports adding, viewing, editing, and deleting contacts, with
- * File I/O (via ContactManager) so data persists between runs.
- */
 public class ContactManagementSystem {
 
     private final ContactManager manager = new ContactManager();
