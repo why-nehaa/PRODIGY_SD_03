@@ -1,11 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Manages the in-memory list of contacts and handles File I/O so that
- * contacts persist between runs of the program.
- */
 public class ContactManager {
 
     private static final String CONTACTS_FILE = "contacts.txt";
@@ -23,10 +18,6 @@ public class ContactManager {
     public List<Contact> getAllContacts() {
         return contacts;
     }
-
-    /**
-     * Finds a contact by name (case-insensitive). Returns null if not found.
-     */
     public Contact findByName(String name) {
         for (Contact c : contacts) {
             if (c.getName().equalsIgnoreCase(name)) {
@@ -45,11 +36,6 @@ public class ContactManager {
         saveToFile();
         return true;
     }
-
-    /**
-     * Call after directly mutating a Contact object's fields (e.g. during
-     * an edit) to persist the change to disk.
-     */
     public void saveToFile() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(CONTACTS_FILE))) {
             for (Contact c : contacts) {
